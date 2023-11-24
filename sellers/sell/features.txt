@@ -1,0 +1,16 @@
+A user adds a product into a databse
+    - a user can register and log in
+    - a user can upload a product
+        - with a picture
+        - with a price/amount
+        - with a name
+        - with a description
+        - with a stock info, that is intaractively changing and can be changed
+
+
+
+Homepage displays all products
+    -It is possible to filter through the products
+        - by producer
+        - by name
+        - by category
