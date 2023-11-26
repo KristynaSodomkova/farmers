@@ -1,9 +1,9 @@
 from django.urls import path
-from . import views
+from .views import RegisterProducerView, ProducersListView, ProducerDetailView
 
 
 urlpatterns = [
-    path('register/', views.RegisterUserView, name="register_user"),
-    path('users/', views.UserDetailView, name="users_list"),
-    path('users/<user_id>', views.UserDetailView, name="user_detail"),
+    path('register_producer/', RegisterProducerView.as_view(), name="register_producer"),
+    path('producers/', ProducersListView.as_view(), name="producer_list"),
+    path('producers/<producer_id>/', ProducerDetailView.as_view(), name="producer_detail"),
 ]

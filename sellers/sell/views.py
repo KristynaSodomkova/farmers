@@ -1,20 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-# Create your views here.
-
-def RegisterUserView(request):
-    context = {
-        "some_var": "something"
-    }
-    return render(request, "register_user.html", context)
-
-def UserDetailView(request):
-    context = {
-        "user_id": "0"
-    }
-    return render(request, "user_detail.html", context)
+from django.views import View
 
 
-def UsersList(request):
-    return HttpResponse("Here will be a list of users")
+class RegisterProducerView(View):
+    def get(self, request):
+        context = {
+            "some_var": "something"
+        }
+        return render(request, "register_producer.html", context)
+
+
+class ProducerDetailView(View):
+    def get(self, request, producer_id):
+        context = {
+            "producer_id": producer_id
+        }
+        return render(request, "producer_detail.html", context)
+
+
+class ProducersListView(View):
+    def get(self, request):
+        return HttpResponse("Here will be a list of producers")
